@@ -22,7 +22,7 @@ public class Task10 {
             {
                 numNegative++;
             }
-            if (array[i]%2 == 0)
+            if (array[i]%2 == 0 && array[i] != 0)
             {
                 numEvens++;
             }
@@ -37,23 +37,44 @@ public class Task10 {
         int[] negativeNumbers = new int[numNegative];
         int[] positiveNumbers = new int[numPositive];
 
-        for (int i = 0; i < array.length; i++) {
-            if(array[i]%2 == 0)
+        for (int i = 0, i1 = 0, i2 = 0, i3 = 0, i4 = 0; i < array.length; i++) {
+            if(array[i]%2 == 0 && array[i] !=0)
             {
-                evenNumbers[i] = array[i];
+                evenNumbers[i1] = array[i];
+                i1++;
             }
             if(array[i]%2 != 0)
             {
-                oddNumbers[i] = array[i];
+                oddNumbers[i2] = array[i];
+                i2++;
             }
             if(array[i] < 0)
             {
-                negativeNumbers[i] = array[i];
+                negativeNumbers[i3] = array[i];
+                i3++;
             }
             if(array[i] > 0)
             {
-                positiveNumbers[i] = array[i];
+                positiveNumbers[i4] = array[i];
+                i4++;
             }
+
+        }
+        System.out.println("\nМассив из четных чисел:");
+        for (int i = 0; i < evenNumbers.length; i++) {
+            System.out.print(" " + evenNumbers[i]);
+        }
+        System.out.println("\nМассив из нечетных чисел:");
+        for (int i = 0; i < oddNumbers.length; i++) {
+            System.out.print(" " + oddNumbers[i]);
+        }
+        System.out.println("\nМассив из положительных чисел:");
+        for (int i = 0; i < positiveNumbers.length; i++) {
+            System.out.print(" " + positiveNumbers[i]);
+        }
+        System.out.println("\nМассив из отрицательных чисел:");
+        for (int i = 0; i < negativeNumbers.length; i++) {
+            System.out.print(" " + negativeNumbers[i]);
         }
     }
 }
