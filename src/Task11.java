@@ -9,14 +9,22 @@ public class Task11 {
         System.out.println("Введите длину линии: ");
         String line = scanner.nextLine();
         int length =  Integer.parseInt(line);
-        String bo = scanner.nextLine();
         System.out.println("Введите направление линии 0 - горизонтально, 1 - вертикально: ");
-        boolean bool = Boolean.parseBoolean(bo);
+        String horizont = scanner.nextLine();
+        int isHorizont = Integer.parseInt(horizont);
 
+        DrawLine(symb, length,isHorizont);
     }
-    public void drawLine(char symbol, int length, boolean isHorizontal) {
+    public static void DrawLine(char symbol, int length, int isHorizontal) {
         for (int i = 0; i < length; i++) {
-            System.out.println(symbol);
+            if (isHorizontal == 0)
+            {
+                System.out.print(symbol);
+            }
+            else
+            {
+                System.out.println(symbol);
+            }
         }
     }
 }
