@@ -4,14 +4,31 @@ public class Task11 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите символ: ");
+
         String symbol = scanner.nextLine();
         char symb = symbol.charAt(0);
+
         System.out.println("Введите длину линии: ");
-        String line = scanner.nextLine();
-        int length =  Integer.parseInt(line);
+        int length;
+        while (true) {
+            try {
+                String line = scanner.nextLine();
+                length =  Integer.parseInt(line); break;
+            } catch (NumberFormatException e) {
+                System.out.println("Ошибка! Введите целое число.");
+            }
+        }
+
         System.out.println("Введите направление линии 0 - горизонтально, 1 - вертикально: ");
-        String horizont = scanner.nextLine();
-        int isHorizont = Integer.parseInt(horizont);
+        int isHorizont;
+        while (true) {
+            try {
+                String horizont = scanner.nextLine();
+                isHorizont = Integer.parseInt(horizont); break;
+            } catch (NumberFormatException e) {
+                System.out.println("Ошибка! Введите целое число.");
+            }
+        }
 
         DrawLine(symb, length,isHorizont);
     }
