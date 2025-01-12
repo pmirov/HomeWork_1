@@ -8,10 +8,7 @@ public class Task10 {
             array[i] = random.nextInt(-10,11);
             System.out.print(array[i] + " ");
         }
-        int[] evenNumbers = new int[]{};
-        int[] oddNumbers;
-        int[] negativeNumbers;
-        int[] positiveNumbers;
+
         int numOdds = 0;
         int numEvens = 0;
         int numNegative = 0;
@@ -34,7 +31,29 @@ public class Task10 {
                 numOdds++;
             }
 
+        }
+        int[] evenNumbers = new int[numEvens];
+        int[] oddNumbers = new int[numOdds];
+        int[] negativeNumbers = new int[numNegative];
+        int[] positiveNumbers = new int[numPositive];
 
+        for (int i = 0; i < array.length; i++) {
+            if(array[i]%2 == 0)
+            {
+                evenNumbers[i] = array[i];
+            }
+            if(array[i]%2 != 0)
+            {
+                oddNumbers[i] = array[i];
+            }
+            if(array[i] < 0)
+            {
+                negativeNumbers[i] = array[i];
+            }
+            if(array[i] > 0)
+            {
+                positiveNumbers[i] = array[i];
+            }
         }
     }
 }
